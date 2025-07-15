@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Halaman Tidak Ditemukan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#0c1222] text-white font-sans flex items-center justify-center min-h-screen text-center p-6"
+  >
+    <div>
+      <!-- ICON BARIKADE -->
+      <div class="w-32 h-32 mx-auto mb-6 float-animation">
+        <svg
+          viewBox="0 0 640 512"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full h-full"
+        >
+          <!-- Background Shape: Cyan -->
+          <path
+            fill="#06b6d4"
+            d="M0 96c0-17.7 14.3-32 32-32H608c17.7 0 32 14.3 32 32v64H0V96z"
+          />
+          <!-- Top Stripes: White -->
+          <rect
+            x="48"
+            y="96"
+            width="80"
+            height="64"
+            fill="white"
+            transform="skewX(-15)"
+          />
+          <rect
+            x="176"
+            y="96"
+            width="80"
+            height="64"
+            fill="white"
+            transform="skewX(-15)"
+          />
+          <rect
+            x="304"
+            y="96"
+            width="80"
+            height="64"
+            fill="white"
+            transform="skewX(-15)"
+          />
+          <rect
+            x="432"
+            y="96"
+            width="80"
+            height="64"
+            fill="white"
+            transform="skewX(-15)"
+          />
+          <rect
+            x="560"
+            y="96"
+            width="80"
+            height="64"
+            fill="white"
+            transform="skewX(-15)"
+          />
+          <!-- Bottom Barrier -->
+          <path
+            fill="#06b6d4"
+            d="M0 192H640V384H576V448c0 8.8-7.2 16-16 16s-16-7.2-16-16V384H96v64c0 8.8-7.2 16-16 16s-16-7.2-16-16V384H0V192z"
+          />
+          <!-- Lights -->
+          <circle cx="96" cy="64" r="12" fill="white" />
+          <circle cx="544" cy="64" r="12" fill="white" />
+        </svg>
+      </div>
+
+      <h1 class="text-5xl font-bold mb-4">404</h1>
+      <p class="text-xl text-slate-300 mb-6">
+        Halaman yang Anda cari tidak ditemukan.
+      </p>
+      <a
+        href="index.html"
+        class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-6 py-3 rounded-full transition"
+      >
+        Kembali ke Beranda
+      </a>
+    </div>
+  </body>
+</html>
