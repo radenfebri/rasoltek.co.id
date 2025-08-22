@@ -1,73 +1,219 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Proyek - Rasoltek</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-[#0c1222] text-white">
-    <header class="bg-[#0f172a] fixed w-full z-10">
-      <nav
-        class="container mx-auto flex justify-between items-center py-4 px-4"
-      >
-        <a href="index.html" class="font-bold text-cyan-400 text-xl"
-          >Rasoltek</a
-        >
-        <ul class="hidden md:flex space-x-6 text-slate-300">
-          <li><a href="about.html" class="hover:text-cyan-400">Tentang</a></li>
-          <li>
-            <a href="services.html" class="hover:text-cyan-400">Layanan</a>
-          </li>
-          <li><a href="projects.html" class="text-cyan-400">Proyek</a></li>
-          <li><a href="contact.html" class="hover:text-cyan-400">Kontak</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <!-- Projects -->
-    <section class="pt-32 pb-16 container mx-auto px-4">
-      <h1 class="text-4xl font-bold text-center mb-10">Proyek Kami</h1>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-[#1e293b] rounded-xl overflow-hidden shadow">
-          <img
-            src="https://source.unsplash.com/400x300/?office,network"
-            class="w-full"
-          />
-          <div class="p-4">
-            <h3 class="text-lg font-semibold">Instalasi Jaringan Perusahaan</h3>
-            <p class="text-slate-300 text-sm">
-              Setup jaringan fiber dan mikrotik.
-            </p>
-          </div>
-        </div>
-        <div class="bg-[#1e293b] rounded-xl overflow-hidden shadow">
-          <img
-            src="https://source.unsplash.com/400x300/?data,center"
-            class="w-full"
-          />
-          <div class="p-4">
-            <h3 class="text-lg font-semibold">Server & Data Center</h3>
-            <p class="text-slate-300 text-sm">
-              Deploy server cloud untuk klien.
-            </p>
-          </div>
-        </div>
-        <div class="bg-[#1e293b] rounded-xl overflow-hidden shadow">
-          <img
-            src="https://source.unsplash.com/400x300/?cyber,security"
-            class="w-full"
-          />
-          <div class="p-4">
-            <h3 class="text-lg font-semibold">Keamanan Cyber</h3>
-            <p class="text-slate-300 text-sm">Proteksi jaringan & firewall.</p>
-          </div>
-        </div>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#ecfeff",
+                100: "#cffafe",
+                200: "#a5f3fc",
+                300: "#67e8f9",
+                400: "#22d3ee",
+                500: "#06b6d4",
+                600: "#0891b2",
+                700: "#0e7490",
+                800: "#155e75",
+                900: "#164e63",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 text-center container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        Proyek Kami
+      </h1>
+      <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+        Berbagai proyek yang telah kami tangani, dikategorikan berdasarkan
+        layanan dan teknologi.
+      </p>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="text-center mb-10">
+      <div class="flex flex-wrap justify-center gap-3">
+        <button
+          class="category-btn px-4 py-2 rounded-full bg-brand-500 text-slate-100 font-semibold"
+          data-category="all"
+        >
+          Semua
+        </button>
+        <button
+          class="category-btn px-4 py-2 rounded-full bg-slate-700 hover:bg-brand-500 text-slate-100 font-semibold"
+          data-category="web"
+        >
+          Web & Aplikasi
+        </button>
+        <button
+          class="category-btn px-4 py-2 rounded-full bg-slate-700 hover:bg-brand-500 text-slate-100 font-semibold"
+          data-category="network"
+        >
+          Jaringan
+        </button>
+        <button
+          class="category-btn px-4 py-2 rounded-full bg-slate-700 hover:bg-brand-500 text-slate-100 font-semibold"
+          data-category="cloud"
+        >
+          Server & Cloud
+        </button>
+        <button
+          class="category-btn px-4 py-2 rounded-full bg-slate-700 hover:bg-brand-500 text-slate-100 font-semibold"
+          data-category="security"
+        >
+          Keamanan
+        </button>
+        <button
+          class="category-btn px-4 py-2 rounded-full bg-slate-700 hover:bg-brand-500 text-slate-100 font-semibold"
+          data-category="seo"
+        >
+          SEO & Marketing
+        </button>
       </div>
     </section>
 
-    <footer class="bg-[#0f172a] text-center py-6 text-sm text-slate-400">
-      &copy; 2025 Raden Solusi Teknologi
-    </footer>
+    <!-- Projects Grid -->
+    <section
+      class="py-16 container mx-auto px-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+    >
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Web -->
+        <article
+          class="project-card web p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">Website Perusahaan</h3>
+          <p class="text-slate-300 text-sm">
+            Desain dan pengembangan website modern berbasis Laravel dan SPA.
+          </p>
+        </article>
+
+        <article
+          class="project-card web p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">E-commerce Platform</h3>
+          <p class="text-slate-300 text-sm">
+            Platform toko online dengan sistem pembayaran dan dashboard admin
+            lengkap.
+          </p>
+        </article>
+
+        <article
+          class="project-card web p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">Web SPA & Dashboard</h3>
+          <p class="text-slate-300 text-sm">
+            Single Page Application untuk dashboard manajemen internal
+            perusahaan.
+          </p>
+        </article>
+
+        <!-- Network -->
+        <article
+          class="project-card network p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">
+            Instalasi Jaringan Perusahaan
+          </h3>
+          <p class="text-slate-300 text-sm">
+            Setup jaringan fiber dan Mikrotik untuk kantor skala menengah.
+          </p>
+        </article>
+
+        <article
+          class="project-card network p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">Hotspot & WiFi Management</h3>
+          <p class="text-slate-300 text-sm">
+            Konfigurasi hotspot dan manajemen bandwidth berbasis MikroTik.
+          </p>
+        </article>
+
+        <!-- Cloud -->
+        <article
+          class="project-card cloud p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">Server & Cloud</h3>
+          <p class="text-slate-300 text-sm">
+            Deployment server cloud dan backup untuk klien enterprise.
+          </p>
+        </article>
+
+        <article
+          class="project-card cloud p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">Data Center Setup</h3>
+          <p class="text-slate-300 text-sm">
+            Desain dan implementasi data center untuk perusahaan skala besar.
+          </p>
+        </article>
+
+        <!-- Security -->
+        <article
+          class="project-card security p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">Cybersecurity & Pentest</h3>
+          <p class="text-slate-300 text-sm">
+            Audit keamanan, penetration testing, dan mitigasi risiko siber.
+          </p>
+        </article>
+
+        <article
+          class="project-card seo p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 transition transform hover:scale-105 shadow-lg hover:shadow-2xl"
+        >
+          <img src="assets/img/logo.png" class="w-full rounded-lg mb-4" />
+          <h3 class="font-semibold text-lg mb-2">SEO & Digital Marketing</h3>
+          <p class="text-slate-300 text-sm">
+            Optimasi website, content marketing, dan strategi digital marketing.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 text-center bg-slate-900">
+      <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-6">
+        Ingin Konsultasi atau Penawaran?
+      </h2>
+      <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+        Tim kami siap membantu merancang solusi terbaik untuk kebutuhan IT dan
+        jaringan Anda.
+      </p>
+      <a
+        href="contact.html"
+        class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+        >Hubungi Kami</a
+      >
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Script Filter -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ulasan - Rasoltek</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#ecfeff",
+                100: "#cffafe",
+                200: "#a5f3fc",
+                300: "#67e8f9",
+                400: "#22d3ee",
+                500: "#06b6d4",
+                600: "#0891b2",
+                700: "#0e7490",
+                800: "#155e75",
+                900: "#164e63",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Swiper.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 text-center container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        Ulasan Kami
+      </h1>
+      <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+        Lihat apa kata klien kami tentang layanan yang kami berikan.
+      </p>
+    </section>
+
+    <!-- Reviews Section -->
+    <section
+      class="py-16 container mx-auto px-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+    >
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper" id="reviews">
+          <!-- Reviews akan dimuat di sini -->
+        </div>
+        <!-- Slider navigasi -->
+        <div class="swiper-button-next text-white"></div>
+        <div class="swiper-button-prev text-white"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 text-center bg-slate-900">
+      <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-6">
+        Ingin Memberikan Ulasan?
+      </h2>
+      <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+        Kami menghargai setiap masukan untuk terus meningkatkan layanan kami.
+      </p>
+      <a
+        href="https://g.page/r/CUv_MquQQLq1EBM/review"
+        target="_blank"
+        class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+      >
+        Tulis Ulasan Anda
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      const reviewsData = [
+        {
+          name: "Qodri Tumbal",
+          rating: 5,
+          date: "sebulan lalu",
+          text: "Biaya pasang murah dan biaya langganannya juga.  untuk kecepatan sangat stabil untuk main game dan scroll sosmed. Kecepatan upload dan download stabil. Mantap dahh",
+        },
+        {
+          name: "Jabir Alawfaa",
+          rating: 5,
+          date: "sebulan lalu",
+          text: "Bagus, Wifi lancar terus, pokoknya ada harga ada rupa",
+        },
+        {
+          name: "Fang fang Yeni",
+          rating: 5,
+          date: "2 minggu lalu",
+          text: "Bagus jaringannya.. Jarang gangguan",
+        },
+        {
+          name: "Wati Kur",
+          rating: 5,
+          date: "sebulan lalu",
+          text: "Wifinya oke dan rekom untuk area rogojampi",
+        },
+        {
+          name: "Wempi Ariyan",
+          rating: 5,
+          date: "10 bulan lalu",
+          text: "layanan yang sangat terpercaya,baik satset",
+        },
+        {
+          name: "Satuni Trias",
+          rating: 5,
+          date: "10 bulan lalu",
+          text: "layanan sangat baik",
+        },
+        {
+          name: "Jikyan Kedaleman",
+          rating: 5,
+          date: "10 bulan lalu",
+          text: "pelayanan yang sangat baik",
+        },
+        {
+          name: "Tegar",
+          rating: 5,
+          date: "10 bulan lalu",
+          text: "sangat baik",
+        },
+        { name: "Furry Feronica", rating: 5, date: "seminggu lalu", text: "-" },
+        { name: "OKE ABDUL", rating: 5, date: "2 minggu lalu", text: "-" },
+        { name: "Darmadi Oke", rating: 5, date: "sebulan lalu", text: "-" },
+      ];
+
+      const reviewsContainer = document.getElementById("reviews");
+
+      reviewsData.forEach((review) => {
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide");
+        slide.innerHTML = `
+          <article class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg hover:shadow-2xl">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center text-white font-bold">
+                ${review.name.charAt(0)}
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">${review.name}</h3>
+                <div class="flex text-yellow-400">${"★".repeat(
+                  review.rating
+                )}</div>
+                <p class="text-slate-400 text-sm">${review.date}</p>
+              </div>
+            </div>
+            <p class="text-slate-300 text-sm">${review.text}</p>
+          </article>
+        `;
+        reviewsContainer.appendChild(slide);
+      });
+
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    </script>
+  </body>
+</html>

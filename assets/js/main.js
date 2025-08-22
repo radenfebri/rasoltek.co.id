@@ -35,10 +35,31 @@ async function loadPartials() {
         mobileNav.classList.toggle("max-h-screen");
       });
     }
-
   } catch (err) {
     console.error("Gagal load partials:", err);
   }
 }
 
 document.addEventListener("DOMContentLoaded", loadPartials);
+
+const buttons = document.querySelectorAll(".category-btn");
+const cards = document.querySelectorAll(".project-card");
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const category = btn.dataset.category;
+
+    // Highlight active button
+    buttons.forEach((b) => b.classList.remove("bg-brand-500"));
+    btn.classList.add("bg-brand-500");
+
+    cards.forEach((card) => {
+      if (category === "all" || card.classList.contains(category)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+

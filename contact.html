@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontak - Rasoltek</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#ecfeff",
+                100: "#cffafe",
+                200: "#a5f3fc",
+                300: "#67e8f9",
+                400: "#22d3ee",
+                500: "#06b6d4",
+                600: "#0891b2",
+                700: "#0e7490",
+                800: "#155e75",
+                900: "#164e63",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 text-center container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Kontak Kami</h1>
+      <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+        Ceritakan kebutuhan Anda. Tim Rasoltek akan merespons secepatnya.
+      </p>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="py-16 container mx-auto px-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <!-- Form Card -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-3xl border border-white/10 shadow-lg">
+          <h2 class="text-3xl font-bold mb-4">Form Kontak</h2>
+          <form
+            class="space-y-4"
+            onsubmit="event.preventDefault(); window.open('https://wa.me/6285156000254?text=' + encodeURIComponent('Halo Rasoltek, saya tertarik dengan layanan Anda. Nama: ' + document.getElementById('fName').value + ', Email: ' + document.getElementById('fEmail').value + ', Telepon: ' + document.getElementById('fPhone').value + '. Pesan: ' + document.getElementById('fMsg').value),'_blank');"
+          >
+            <div class="grid sm:grid-cols-2 gap-4">
+              <input id="fName" required placeholder="Nama" class="w-full px-4 py-3 rounded-2xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-500"/>
+              <input id="fEmail" type="email" placeholder="Email (opsional)" class="w-full px-4 py-3 rounded-2xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-500"/>
+            </div>
+            <input id="fPhone" required placeholder="No. Telepon/WA" class="w-full px-4 py-3 rounded-2xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-500"/>
+            <textarea id="fMsg" rows="4" required placeholder="Ceritakan singkat kebutuhan Anda" class="w-full px-4 py-3 rounded-2xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+            <div class="flex flex-wrap gap-3">
+              <button type="submit" class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition">
+                Kirim via WhatsApp
+              </button>
+              <a href="mailto:halo@rasoltek.id" class="inline-flex items-center rounded-full ring-1 ring-white/20 hover:bg-white/5 px-6 py-3 font-semibold">
+                Email Kami
+              </a>
+            </div>
+          </form>
+
+          <div class="mt-6 text-sm text-slate-400 space-y-1">
+            <p><span class="text-white">Email:</span> halo@rasoltek.id</p>
+            <p><span class="text-white">Telepon/WA:</span> +62 851-5600-0254</p>
+            <p><span class="text-white">Jam Operasional:</span> Senin–Jumat, 09.00–17.00 WIB</p>
+          </div>
+        </div>
+
+        <!-- Google Maps Card -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-4 rounded-3xl border border-white/10 shadow-lg overflow-hidden">
+          <iframe
+            title="Lokasi Rasoltek di Google Maps"
+            src="https://www.google.com/maps?q=Rasoltek&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-[600px] rounded-2xl"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 text-center bg-slate-900">
+      <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-6">
+        Ingin Konsultasi atau Penawaran?
+      </h2>
+      <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+        Tim kami siap membantu merancang solusi terbaik untuk kebutuhan IT dan jaringan Anda.
+      </p>
+      <a
+        href="contact.html"
+        class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+      >Hubungi Kami</a>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

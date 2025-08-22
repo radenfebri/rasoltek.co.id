@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layanan - Rasoltek</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#ecfeff",
+                100: "#cffafe",
+                200: "#a5f3fc",
+                300: "#67e8f9",
+                400: "#22d3ee",
+                500: "#06b6d4",
+                600: "#0891b2",
+                700: "#0e7490",
+                800: "#155e75",
+                900: "#164e63",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 text-center container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        Layanan Kami
+      </h1>
+      <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+        Rasoltek menyediakan layanan profesional di bidang jaringan, server,
+        cloud, software, dan solusi digital untuk mendukung transformasi bisnis
+        Anda.
+      </p>
+    </section>
+
+    <!-- Services Grid -->
+    <section
+      class="py-16 container mx-auto px-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+    >
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Billing ISP & Otomasi -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 17v-6h6v6m-6-6v-6h6v6m-6-6h6"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">Billing ISP & Otomasi</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            Integrasi penagihan pelanggan berbasis PPPoE/Hotspot, isolir
+            otomatis, reminder WhatsApp/Telegram, dan rekonsiliasi pembayaran.
+          </p>
+        </article>
+
+        <!-- MikroTik & FreeRADIUS -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 7h18M3 12h18M3 17h18"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">MikroTik & FreeRADIUS</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            Desain, implementasi, dan tuning AAA. Profil bandwidth dinamis, CoA,
+            monitoring, dan high availability.
+          </p>
+        </article>
+
+        <!-- Payment Gateway -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.5 0-3 1-3 3s1.5 3 3 3 3-1 3-3-1.5-3-3-3z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 2a10 10 0 100 20 10 10 0 000-20z"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">Integrasi Payment Gateway</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            Tripay & alternatif. Webhook, validasi signature, auto-activate
+            layanan, dan notifikasi real-time.
+          </p>
+        </article>
+
+        <!-- Web & Aplikasi -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 7h18M3 12h18M3 17h18"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">Web & Aplikasi</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            Pengembangan Laravel/Node, SPA, dashboard admin, role-based access,
+            dan API yang terdokumentasi.
+          </p>
+        </article>
+
+        <!-- Cloud & DevOps -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 15a4 4 0 014-4h10a4 4 0 110 8H7a4 4 0 01-4-4z"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">Cloud & DevOps</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            CI/CD, containerization, backup & DR, observability
+            (Grafana/Prometheus), dan keamanan.
+          </p>
+        </article>
+
+        <!-- IT Support & Maintenance -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 17v-6h6v6M12 3v3M12 21v-3"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">IT Support & Maintenance</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            SLA, on-call, preventive maintenance, dokumentasi, dan pelatihan
+            tim.
+          </p>
+        </article>
+
+        <!-- Cybersecurity & Penetration Testing -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 1a11 11 0 00-11 11v7a2 2 0 002 2h18a2 2 0 002-2v-7A11 11 0 0012 1z"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">Cybersecurity & Pentest</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            Audit keamanan, penetration testing, vulnerability assessment, dan
+            implementasi best-practice untuk melindungi sistem IT Anda.
+          </p>
+        </article>
+
+        <!-- Network Security & Firewall -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12h18M12 3v18"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">Network Security & Firewall</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            Desain dan konfigurasi firewall, VPN, segmentasi jaringan,
+            monitoring IDS/IPS, dan mitigasi serangan siber.
+          </p>
+        </article>
+
+        <!-- SEO & Digital Marketing -->
+        <article
+          class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition transform hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in-up"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <svg
+              class="w-6 h-6 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 17v-6h6v6M12 3v3M12 21v-3"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg">SEO & Digital Marketing</h3>
+          </div>
+          <p class="text-slate-300 mt-2 text-sm">
+            Optimasi website, content marketing, backlink building, dan strategi
+            digital untuk meningkatkan visibilitas dan traffic bisnis Anda.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 text-center bg-slate-900">
+      <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-6">
+        Ingin Konsultasi atau Penawaran?
+      </h2>
+      <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+        Tim kami siap membantu merancang solusi terbaik untuk kebutuhan IT dan
+        jaringan Anda.
+      </p>
+      <a
+        href="contact.html"
+        class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+        >Hubungi Kami</a
+      >
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
