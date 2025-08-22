@@ -7,8 +7,29 @@
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#ecfeff",
+                100: "#cffafe",
+                200: "#a5f3fc",
+                300: "#67e8f9",
+                400: "#22d3ee",
+                500: "#06b6d4",
+                600: "#0891b2",
+                700: "#0e7490",
+                800: "#155e75",
+                900: "#164e63",
+              },
+            },
+          },
+        },
+      };
+    </script>
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
@@ -18,8 +39,10 @@
 
     <!-- About -->
     <section class="pt-28 pb-16 container mx-auto px-4 text-center fade-in-up">
-      <h1 class="text-4xl font-bold mb-6">Tentang Kami</h1>
-      <p class="text-slate-300 max-w-2xl mx-auto leading-relaxed">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+        Tentang Kami
+      </h1>
+      <p class="text-slate-300 max-w-2xl mx-auto leading-relaxed text-lg">
         Raden Solusi Teknologi (Rasoltek) bergerak di bidang jaringan, server,
         dan solusi digital. Kami hadir untuk mendukung bisnis Anda dengan
         teknologi terbaru, efisiensi tinggi, dan layanan terbaik.
@@ -27,79 +50,155 @@
 
       <!-- Highlight Box -->
       <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mt-12">
-        <div class="p-6 bg-slate-800 rounded-xl shadow float-animation">
-          <h2 class="text-3xl font-bold text-brand-400">10+</h2>
+        <div
+          class="p-6 bg-slate-800 rounded-xl shadow-lg float-animation border border-slate-700 hover:border-brand-500/30 transition-colors"
+        >
+          <h2 class="text-4xl font-bold text-brand-400">10+</h2>
           <p class="mt-2 text-slate-300">Tahun Pengalaman</p>
         </div>
-        <div class="p-6 bg-slate-800 rounded-xl shadow float-animation">
-          <h2 class="text-3xl font-bold text-brand-400">100+</h2>
+        <div
+          class="p-6 bg-slate-800 rounded-xl shadow-lg float-animation border border-slate-700 hover:border-brand-500/30 transition-colors"
+        >
+          <h2 class="text-4xl font-bold text-brand-400">100+</h2>
           <p class="mt-2 text-slate-300">Proyek Sukses</p>
         </div>
-        <div class="p-6 bg-slate-800 rounded-xl shadow float-animation sm:col-span-2 md:col-span-1">
-          <h2 class="text-3xl font-bold text-brand-400">50+</h2>
+        <div
+          class="p-6 bg-slate-800 rounded-xl shadow-lg float-animation border border-slate-700 hover:border-brand-500/30 transition-colors sm:col-span-2 md:col-span-1"
+        >
+          <h2 class="text-4xl font-bold text-brand-400">50+</h2>
           <p class="mt-2 text-slate-300">Mitra & Klien</p>
         </div>
       </div>
     </section>
 
     <!-- Timeline -->
-    <section class="py-16 bg-slate-900">
+    <section class="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Perjalanan Kami</h2>
-        <div class="relative space-y-12">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text"
+        >
+          Perjalanan Kami
+        </h2>
 
-          <!-- Vertical line only visible on md+ -->
-          <div class="hidden md:block border-l-4 border-brand-500 absolute h-full left-1/2 transform -translate-x-1/2"></div>
+        <div class="timeline-container relative">
+          <!-- Garis timeline -->
+          <div class="timeline-line hidden md:block"></div>
 
-          <!-- Timeline Item -->
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between fade-in-up">
-            <div class="md:w-5/12 text-right md:pr-8">
-              <time class="text-sm text-slate-400">2019</time>
-              <h3 class="text-xl font-semibold text-brand-400">Awal Berdiri</h3>
-              <p class="text-slate-300">Rasoltek resmi berdiri sebagai penyedia solusi jaringan kecil dan jasa instalasi internet lokal.</p>
-            </div>
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-500 rounded-full flex items-center justify-center text-white font-bold mx-auto my-4 md:my-0 z-10">1</div>
-            <div class="md:w-5/12">
-              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80" alt="2019" class="w-full h-auto rounded-lg shadow-lg" />
+          <!-- Timeline Item 1 -->
+          <div class="mb-16 md:mb-24 relative">
+            <div class="timeline-dot hidden md:block"></div>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between gap-8"
+            >
+              <div
+                class="md:w-5/12 order-2 md:order-1 timeline-card p-6 md:p-8"
+              >
+                <time class="text-sm text-brand-400 font-semibold">2019</time>
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-2">
+                  Awal Berdiri
+                </h3>
+                <p class="text-slate-300 mt-3">
+                  Rasoltek resmi berdiri sebagai penyedia solusi jaringan kecil
+                  dan jasa instalasi internet lokal.
+                </p>
+              </div>
+              <div
+                class="md:w-5/12 order-1 md:order-2 rounded-xl overflow-hidden shadow-lg"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80"
+                  alt="2019"
+                  class="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
 
-          <!-- Timeline Item -->
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between fade-in-up">
-            <div class="md:w-5/12 order-2 md:order-1">
-              <img src="https://images.unsplash.com/photo-1581090700227-4c4d1a7bbf57?auto=format&fit=crop&w=600&q=80" alt="2021" class="w-full h-auto rounded-lg shadow-lg" />
-            </div>
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-500 rounded-full flex items-center justify-center text-white font-bold mx-auto my-4 md:my-0 z-10 order-1 md:order-2">2</div>
-            <div class="md:w-5/12 text-left md:pl-8 order-3">
-              <time class="text-sm text-slate-400">2021</time>
-              <h3 class="text-xl font-semibold text-brand-400">Ekspansi Layanan</h3>
-              <p class="text-slate-300">Mulai mengembangkan layanan manajemen server, hosting, dan solusi digital berbasis cloud.</p>
+          <!-- Timeline Item 2 -->
+          <div class="mb-16 md:mb-24 relative">
+            <div class="timeline-dot hidden md:block"></div>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between gap-8"
+            >
+              <div
+                class="md:w-5/12 order-2 rounded-xl overflow-hidden shadow-lg"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&w=600&q=80"
+                  alt="2021"
+                  class="w-full h-auto"
+                />
+              </div>
+              <div class="md:w-5/12 order-1 timeline-card p-6 md:p-8">
+                <time class="text-sm text-brand-400 font-semibold">2021</time>
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-2">
+                  Ekspansi Layanan
+                </h3>
+                <p class="text-slate-300 mt-3">
+                  Mulai mengembangkan layanan manajemen server, hosting, dan
+                  solusi digital berbasis cloud.
+                </p>
+              </div>
             </div>
           </div>
 
-          <!-- Timeline Item -->
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between fade-in-up">
-            <div class="md:w-5/12 text-right md:pr-8">
-              <time class="text-sm text-slate-400">2023</time>
-              <h3 class="text-xl font-semibold text-brand-400">Kolaborasi & Mitra</h3>
-              <p class="text-slate-300">Bekerja sama dengan berbagai mitra strategis dan berhasil menyelesaikan lebih dari 100 proyek.</p>
-            </div>
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-500 rounded-full flex items-center justify-center text-white font-bold mx-auto my-4 md:my-0 z-10">3</div>
-            <div class="md:w-5/12">
-              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="2023" class="w-full h-auto rounded-lg shadow-lg" />
+          <!-- Timeline Item 3 -->
+          <div class="mb-16 md:mb-24 relative">
+            <div class="timeline-dot hidden md:block"></div>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between gap-8"
+            >
+              <div
+                class="md:w-5/12 order-2 md:order-1 timeline-card p-6 md:p-8"
+              >
+                <time class="text-sm text-brand-400 font-semibold">2023</time>
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-2">
+                  Kolaborasi & Mitra
+                </h3>
+                <p class="text-slate-300 mt-3">
+                  Bekerja sama dengan berbagai mitra strategis dan berhasil
+                  menyelesaikan lebih dari 100 proyek.
+                </p>
+              </div>
+              <div
+                class="md:w-5/12 order-1 md:order-2 rounded-xl overflow-hidden shadow-lg"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80"
+                  alt="2023"
+                  class="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
 
-          <!-- Timeline Item -->
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between fade-in-up">
-            <div class="md:w-5/12 order-2 md:order-1">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Sekarang" class="w-full h-auto rounded-lg shadow-lg" />
-            </div>
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-500 rounded-full flex items-center justify-center text-white font-bold mx-auto my-4 md:my-0 z-10 order-1 md:order-2">4</div>
-            <div class="md:w-5/12 text-left md:pl-8 order-3">
-              <time class="text-sm text-slate-400">Sekarang</time>
-              <h3 class="text-xl font-semibold text-brand-400">Transformasi Digital</h3>
-              <p class="text-slate-300">Fokus pada inovasi jaringan, cloud, keamanan IT, dan solusi digital modern untuk mendukung transformasi bisnis.</p>
+          <!-- Timeline Item 4 -->
+          <div class="relative">
+            <div class="timeline-dot hidden md:block"></div>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between gap-8"
+            >
+              <div
+                class="md:w-5/12 order-2 rounded-xl overflow-hidden shadow-lg"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80"
+                  alt="Sekarang"
+                  class="w-full h-auto"
+                />
+              </div>
+              <div class="md:w-5/12 order-1 timeline-card p-6 md:p-8">
+                <time class="text-sm text-brand-400 font-semibold"
+                  >Sekarang</time
+                >
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-2">
+                  Transformasi Digital
+                </h3>
+                <p class="text-slate-300 mt-3">
+                  Fokus pada inovasi jaringan, cloud, keamanan IT, dan solusi
+                  digital modern untuk mendukung transformasi bisnis.
+                </p>
+              </div>
             </div>
           </div>
         </div>

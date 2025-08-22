@@ -4,54 +4,42 @@ html, body {
     width: 100%;
     position: relative;
 }
-
-/* Pastikan semua container utama tidak melebihi lebar viewport */
 .max-w-7xl {
     max-width: 100%;
 }
-
-/* Perbaikan untuk elemen dengan gradient yang mungkin menyebabkan overflow */
 .absolute.inset-0 {
     left: 0;
     right: 0;
 }
 
-/* Perbaikan khusus untuk mobile */
+/* RESPONSIVE FIXES */
 @media (max-width: 768px) {
-    /* Timeline adjustment untuk mobile */
-    .timeline::before {
-        left: 20px;
-    }
+    .timeline::before { left: 20px; }
     .timeline-card {
         margin-left: 3rem;
         width: calc(100% - 4rem);
     }
-    
-    /* Pastikan gambar/iframe tidak melebihi container */
-    img, iframe, video {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    /* Perbaikan padding untuk mobile */
+    img, iframe, video { max-width: 100%; height: auto; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .grid { grid-template-columns: 1fr; }
+    .absolute.-inset-6 { left: 0.5rem; right: 0.5rem; }
+}
+@media (max-width: 640px) {
+    .rounded-3xl { border-radius: 1rem; }
+    .rounded-2xl { border-radius: 0.75rem; }
+    .gap-6 { gap: 1rem; }
+    .gap-10 { gap: 1.5rem; }
+}
+
+/* SAFE AREA SUPPORT */
+@supports(padding: max(0px)) {
     .px-4 {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    /* Perbaikan untuk grid di mobile */
-    .grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Perbaikan untuk elemen dengan blur yang mungkin menyebabkan overflow */
-    .absolute.-inset-6 {
-        left: 0.5rem;
-        right: 0.5rem;
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
     }
 }
 
-/* Animasi yang sudah ada */
+/* ANIMASI */
 @keyframes float {
   0%,100% { transform: translateY(0) }
   50% { transform: translateY(-10px) }
@@ -64,55 +52,6 @@ html, body {
 }
 .fade-in-up { opacity: 0; animation: fadeInUp .8s ease-out forwards }
 
-/* Timeline garis tengah */
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 4px;
-  background: linear-gradient(to bottom, #0ea5e9, #1d4ed8);
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-/* Step bulat angka */
-.timeline-step {
-  width: 3rem;
-  height: 3rem;
-  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-  color: white;
-  font-weight: bold;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 12px rgba(59,130,246,0.6);
-  position: relative;
-  z-index: 10;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.timeline-step:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 20px rgba(59,130,246,0.9);
-}
-
-/* Card gambar & teks */
-.timeline-card {
-  background: rgba(30,41,59,0.6); /* semi-transparan dark */
-  backdrop-filter: blur(8px);
-  border-radius: 1rem;
-  padding: 1.25rem;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.timeline-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
-}
-
-/* Tambah animasi reveal */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -123,46 +62,68 @@ html, body {
   transform: translateY(0);
 }
 
-/* PERBAIKAN TAMBAHAN UNTUK MENCEGAH OVERFLOW */
-.container-overflow {
-    overflow-x: hidden;
-    max-width: 100vw;
+/* TIMELINE */
+.timeline-container { position: relative; }
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #06b6d4, #0891b2, #0e7490);
+    border-radius: 2px;
+}
+.timeline-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #06b6d4;
+    border: 4px solid #0e7490;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.timeline-dot::after {
+    content: "";
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: rgba(6, 182, 212, 0.4);
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    70% { transform: scale(2); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
 }
 
-/* Memastikan elemen dengan posisi absolute tidak menyebabkan overflow */
-.relative, .absolute {
-    max-width: 100%;
+/* TIMELINE CARD */
+.timeline-card {
+    background: linear-gradient(145deg, #1a2937, #1e293b);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3),
+                0 0 15px rgba(6,182,212,0.2);
+    transition: all 0.3s ease;
+}
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px -5px rgba(0,0,0,0.4),
+                0 0 25px rgba(6,182,212,0.3);
+    border-color: rgba(6,182,212,0.4);
 }
 
-/* Perbaikan untuk gradient background yang mungkin melebar */
-.bg-gradient-to-br {
-    background-size: cover;
+/* TEXT EFFECT */
+.gradient-text {
+    background: linear-gradient(135deg, #22d3ee, #06b6d4, #0891b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-/* Perbaikan untuk border radius di mobile */
-@media (max-width: 640px) {
-    .rounded-3xl {
-        border-radius: 1rem;
-    }
-    
-    .rounded-2xl {
-        border-radius: 0.75rem;
-    }
-    
-    /* Memastikan grid gap tidak terlalu besar di mobile */
-    .gap-6 {
-        gap: 1rem;
-    }
-    
-    .gap-10 {
-        gap: 1.5rem;
-    }
-}
-
-/* Safe area untuk device dengan notch */
-@supports(padding: max(0px)) {
-    .px-4 {
-        padding-left: max(1rem, env(safe-area-inset-left));
-        padding-right: max(1rem, env(safe-area-inset-right));
-    }
-}
+/* CONTAINER OVERFLOW FIX */
+.container-overflow { overflow-x: hidden; max-width: 100vw; }
+.relative, .absolute { max-width: 100%; }
+.bg-gradient-to-br { background-size: cover; }
