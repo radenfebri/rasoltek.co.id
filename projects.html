@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyek - Rasoltek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#0c1222] text-white">
+    <header class="bg-[#0f172a] fixed w-full z-10">
+      <nav
+        class="container mx-auto flex justify-between items-center py-4 px-4"
+      >
+        <a href="index.html" class="font-bold text-cyan-400 text-xl"
+          >Rasoltek</a
+        >
+        <ul class="hidden md:flex space-x-6 text-slate-300">
+          <li><a href="about.html" class="hover:text-cyan-400">Tentang</a></li>
+          <li>
+            <a href="services.html" class="hover:text-cyan-400">Layanan</a>
+          </li>
+          <li><a href="projects.html" class="text-cyan-400">Proyek</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-400">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Projects -->
+    <section class="pt-32 pb-16 container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-10">Proyek Kami</h1>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-[#1e293b] rounded-xl overflow-hidden shadow">
+          <img
+            src="https://source.unsplash.com/400x300/?office,network"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Instalasi Jaringan Perusahaan</h3>
+            <p class="text-slate-300 text-sm">
+              Setup jaringan fiber dan mikrotik.
+            </p>
+          </div>
+        </div>
+        <div class="bg-[#1e293b] rounded-xl overflow-hidden shadow">
+          <img
+            src="https://source.unsplash.com/400x300/?data,center"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Server & Data Center</h3>
+            <p class="text-slate-300 text-sm">
+              Deploy server cloud untuk klien.
+            </p>
+          </div>
+        </div>
+        <div class="bg-[#1e293b] rounded-xl overflow-hidden shadow">
+          <img
+            src="https://source.unsplash.com/400x300/?cyber,security"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Keamanan Cyber</h3>
+            <p class="text-slate-300 text-sm">Proteksi jaringan & firewall.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#0f172a] text-center py-6 text-sm text-slate-400">
+      &copy; 2025 Raden Solusi Teknologi
+    </footer>
+  </body>
+</html>

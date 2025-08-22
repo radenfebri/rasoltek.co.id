@@ -35,15 +35,58 @@
                 900: "#164e63",
               },
             },
+            screens: {
+              xs: "475px",
+            },
           },
         },
       };
     </script>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+    <style>
+      /* Mobile-first responsive adjustments */
+      @media (max-width: 640px) {
+        .hero-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .hero-visual {
+          order: -1;
+          margin-bottom: 2rem;
+        }
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .services-grid,
+        .projects-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr !important;
+        }
+        #map {
+          height: 300px;
+          margin-top: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .timeline::before {
+          left: 20px;
+        }
+        .timeline-card {
+          margin-left: 3rem;
+        }
+      }
+
+      /* Prevent horizontal overflow */
+      .container-overflow {
+        overflow-x: hidden;
+      }
+    </style>
   </head>
 
-  <body class="bg-slate-950 text-slate-100 antialiased">
+  <body class="bg-slate-950 text-slate-100 antialiased container-overflow">
     <!-- Navbar -->
     <div id="navbar"></div>
 
@@ -54,10 +97,12 @@
           class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-500/10 via-transparent to-transparent"
         ></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid lg:grid-cols-2 gap-10 items-center py-20">
-            <div class="space-y-6">
+          <div
+            class="grid lg:grid-cols-2 gap-10 items-center py-12 md:py-20 hero-grid"
+          >
+            <div class="space-y-6 order-2 lg:order-1">
               <h1
-                class="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
               >
                 Solusi IT & Jaringan
                 <span class="text-brand-400">untuk Bisnis</span> Anda
@@ -71,16 +116,18 @@
                 <a
                   href="https://wa.me/6285156000254"
                   target="_blank"
-                  class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+                  class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold shadow-lg shadow-brand-500/20 transition"
                   >Hubungi via WhatsApp</a
                 >
                 <a
                   href="services.html"
-                  class="inline-flex items-center rounded-full ring-1 ring-white/20 hover:bg-white/5 px-6 py-3 font-semibold"
+                  class="inline-flex items-center rounded-full ring-1 ring-white/20 hover:bg-white/5 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold"
                   >Lihat Layanan</a
                 >
               </div>
-              <div class="flex items-center gap-6 pt-2 text-sm text-slate-400">
+              <div
+                class="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 text-sm text-slate-400"
+              >
                 <div>
                   <span class="text-white font-semibold">7+</span> tahun
                   pengalaman
@@ -95,48 +142,48 @@
                 </div>
               </div>
             </div>
-            <div class="relative">
+            <div class="relative order-1 lg:order-2 hero-visual">
               <div
-                class="absolute -inset-6 -z-10 bg-brand-500/10 blur-3xl rounded-3xl"
+                class="absolute -inset-4 sm:-inset-6 -z-10 bg-brand-500/10 blur-3xl rounded-3xl"
               ></div>
               <div
-                class="rounded-3xl bg-white/5 border border-white/10 p-6 shadow-2xl"
+                class="rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 p-4 sm:p-6 shadow-2xl"
               >
                 <!-- Visual: simplified network diagram -->
-                <div class="grid grid-cols-3 gap-4">
-                  <div class="col-span-1 space-y-4">
+                <div class="grid grid-cols-3 gap-3 sm:gap-4">
+                  <div class="col-span-1 space-y-3 sm:space-y-4">
                     <div
-                      class="p-4 rounded-2xl bg-slate-900 border border-white/10 text-center"
+                      class="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-white/10 text-center text-xs sm:text-sm"
                     >
                       Router<br /><span class="text-xs text-slate-400"
                         >MikroTik</span
                       >
                     </div>
                     <div
-                      class="p-4 rounded-2xl bg-slate-900 border border-white/10 text-center"
+                      class="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-white/10 text-center text-xs sm:text-sm"
                     >
                       RADIUS<br /><span class="text-xs text-slate-400"
                         >FreeRADIUS</span
                       >
                     </div>
                   </div>
-                  <div class="col-span-2 space-y-4">
+                  <div class="col-span-2 space-y-3 sm:space-y-4">
                     <div
-                      class="p-4 rounded-2xl bg-slate-900 border border-white/10"
+                      class="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-white/10 text-xs sm:text-sm"
                     >
                       Billing ISP<br /><span class="text-xs text-slate-400"
                         >PHP / Laravel</span
                       >
                     </div>
                     <div
-                      class="p-4 rounded-2xl bg-slate-900 border border-white/10"
+                      class="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-white/10 text-xs sm:text-sm"
                     >
                       Payment Gateway<br /><span class="text-xs text-slate-400"
                         >Tripay, dll</span
                       >
                     </div>
                     <div
-                      class="p-4 rounded-2xl bg-slate-900 border border-white/10"
+                      class="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-white/10 text-xs sm:text-sm"
                     >
                       Monitoring & Alerting<br /><span
                         class="text-xs text-slate-400"
@@ -152,12 +199,14 @@
       </section>
 
       <!-- ============= ABOUT ============= -->
-      <section id="about" class="py-20 border-t border-white/10">
+      <section id="about" class="py-16 md:py-20 border-t border-white/10">
         <div
-          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 md:gap-12 items-center"
         >
           <div>
-            <h2 class="text-2xl sm:text-4xl font-bold mb-4">Tentang Kami</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+              Tentang Kami
+            </h2>
             <p class="text-slate-300 leading-relaxed">
               Raden Solusi Teknologi (Rasoltek) adalah partner teknis Anda untuk
               membangun dan mengelola infrastruktur digital yang andal. Kami
@@ -195,23 +244,23 @@
             </ul>
           </div>
           <div
-            class="rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 p-6"
+            class="rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 p-4 md:p-6 mt-8 lg:mt-0"
           >
-            <div class="grid grid-cols-2 gap-4">
-              <div class="p-4 rounded-xl bg-white/5 text-center">
-                <div class="text-3xl font-extrabold">50+</div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4 stats-grid">
+              <div class="p-3 md:p-4 rounded-xl bg-white/5 text-center">
+                <div class="text-2xl md:text-3xl font-extrabold">50+</div>
                 <div class="text-xs text-slate-400">Perangkat dikelola</div>
               </div>
-              <div class="p-4 rounded-xl bg-white/5 text-center">
-                <div class="text-3xl font-extrabold">20+</div>
+              <div class="p-3 md:p-4 rounded-xl bg-white/5 text-center">
+                <div class="text-2xl md:text-3xl font-extrabold">20+</div>
                 <div class="text-xs text-slate-400">Proyek terselesaikan</div>
               </div>
-              <div class="p-4 rounded-xl bg-white/5 text-center">
-                <div class="text-3xl font-extrabold">10K+</div>
+              <div class="p-3 md:p-4 rounded-xl bg-white/5 text-center">
+                <div class="text-2xl md:text-3xl font-extrabold">10K+</div>
                 <div class="text-xs text-slate-400">User di-auth per hari*</div>
               </div>
-              <div class="p-4 rounded-xl bg-white/5 text-center">
-                <div class="text-3xl font-extrabold">A+</div>
+              <div class="p-3 md:p-4 rounded-xl bg-white/5 text-center">
+                <div class="text-2xl md:text-3xl font-extrabold">A+</div>
                 <div class="text-xs text-slate-400">
                   Keamanan & praktik DevOps
                 </div>
@@ -227,11 +276,13 @@
       <!-- ============= SERVICES ============= -->
       <section
         id="services"
-        class="py-20 border-t border-white/10 bg-slate-950"
+        class="py-16 md:py-20 border-t border-white/10 bg-slate-950"
       >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-end justify-between gap-6 mb-10">
-            <h2 class="text-2xl sm:text-4xl font-bold">Layanan Kami</h2>
+          <div class="flex items-end justify-between gap-6 mb-8 md:mb-10">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
+              Layanan Kami
+            </h2>
             <a
               href="contact.html"
               class="hidden sm:inline-flex items-center text-sm font-semibold rounded-full ring-1 ring-white/15 px-4 py-2 hover:bg-white/5"
@@ -239,10 +290,12 @@
             >
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 services-grid"
+          >
             <!-- Card -->
             <article
-              class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition"
+              class="p-4 md:p-6 rounded-2xl md:rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 hover:from-slate-900/80 hover:to-slate-800/80 transition"
             >
               <h3 class="font-semibold text-lg">Billing ISP & Otomasi</h3>
               <p class="text-slate-300 mt-2 text-sm">
@@ -252,7 +305,7 @@
               </p>
             </article>
             <article
-              class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
+              class="p-4 md:p-6 rounded-2xl md:rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
             >
               <h3 class="font-semibold text-lg">MikroTik & FreeRADIUS</h3>
               <p class="text-slate-300 mt-2 text-sm">
@@ -261,7 +314,7 @@
               </p>
             </article>
             <article
-              class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
+              class="p-4 md:p-6 rounded-2xl md:rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
             >
               <h3 class="font-semibold text-lg">Integrasi Payment Gateway</h3>
               <p class="text-slate-300 mt-2 text-sm">
@@ -270,7 +323,7 @@
               </p>
             </article>
             <article
-              class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
+              class="p-4 md:p-6 rounded-2xl md:rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
             >
               <h3 class="font-semibold text-lg">Web & Aplikasi</h3>
               <p class="text-slate-300 mt-2 text-sm">
@@ -279,7 +332,7 @@
               </p>
             </article>
             <article
-              class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
+              class="p-4 md:p-6 rounded-2xl md:rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
             >
               <h3 class="font-semibold text-lg">Cloud & DevOps</h3>
               <p class="text-slate-300 mt-2 text-sm">
@@ -288,7 +341,7 @@
               </p>
             </article>
             <article
-              class="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
+              class="p-4 md:p-6 rounded-2xl md:rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800"
             >
               <h3 class="font-semibold text-lg">IT Support & Maintenance</h3>
               <p class="text-slate-300 mt-2 text-sm">
@@ -298,48 +351,58 @@
             </article>
           </div>
         </div>
-        <div class="text-center mt-10">
+        <div class="text-center mt-8 md:mt-10">
           <a
             href="services.html"
-            class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+            class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-5 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold shadow-lg shadow-brand-500/20 transition"
             >Lihat Semua Layanan</a
           >
         </div>
       </section>
 
       <!-- ============= PROJECTS (PLACEHOLDER) ============= -->
-      <section id="projects" class="py-20 border-t border-white/10">
+      <section id="projects" class="py-16 md:py-20 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-end justify-between gap-6 mb-10">
-            <h2 class="text-2xl sm:text-4xl font-bold">Proyek Terpilih</h2>
+          <div class="flex items-end justify-between gap-6 mb-8 md:mb-10">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
+              Proyek Terpilih
+            </h2>
             <a
               href="contact.html"
               class="hidden sm:inline-flex items-center text-sm font-semibold rounded-full ring-1 ring-white/15 px-4 py-2 hover:bg-white/5"
               >Diskusikan Proyek</a
             >
           </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="p-5 rounded-3xl bg-white/5 border border-white/10">
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 projects-grid"
+          >
+            <div
+              class="p-4 md:p-5 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10"
+            >
               <div
-                class="h-36 rounded-2xl bg-gradient-to-br from-brand-500/30 to-slate-700/30 mb-4"
+                class="h-32 md:h-36 rounded-xl md:rounded-2xl bg-gradient-to-br from-brand-500/30 to-slate-700/30 mb-4"
               ></div>
               <h3 class="font-semibold">Billing ISP + Tripay</h3>
               <p class="text-sm text-slate-400 mt-1">
                 Webhook auto-activate profil PPPoE, isolir dinamis, WA reminder.
               </p>
             </div>
-            <div class="p-5 rounded-3xl bg-white/5 border border-white/10">
+            <div
+              class="p-4 md:p-5 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10"
+            >
               <div
-                class="h-36 rounded-2xl bg-gradient-to-br from-brand-500/30 to-slate-700/30 mb-4"
+                class="h-32 md:h-36 rounded-xl md:rounded-2xl bg-gradient-to-br from-brand-500/30 to-slate-700/30 mb-4"
               ></div>
               <h3 class="font-semibold">RADIUS HA untuk MikroTik</h3>
               <p class="text-sm text-slate-400 mt-1">
                 Failover, monitoring, dan grafana dashboard autentikasi.
               </p>
             </div>
-            <div class="p-5 rounded-3xl bg-white/5 border border-white/10">
+            <div
+              class="p-4 md:p-5 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10"
+            >
               <div
-                class="h-36 rounded-2xl bg-gradient-to-br from-brand-500/30 to-slate-700/30 mb-4"
+                class="h-32 md:h-36 rounded-xl md:rounded-2xl bg-gradient-to-br from-brand-500/30 to-slate-700/30 mb-4"
               ></div>
               <h3 class="font-semibold">Portal Self-care Pelanggan</h3>
               <p class="text-sm text-slate-400 mt-1">
@@ -348,22 +411,27 @@
             </div>
           </div>
         </div>
-        <div class="text-center mt-10">
+        <div class="text-center mt-8 md:mt-10">
           <a
             href="projects.html"
-            class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+            class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-5 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold shadow-lg shadow-brand-500/20 transition"
             >Lihat Semua Proyek</a
           >
         </div>
       </section>
 
       <!-- ============= CONTACT ============= -->
-      <section id="contact" class="py-20 border-t border-white/10 bg-slate-950">
+      <section
+        id="contact"
+        class="py-16 md:py-20 border-t border-white/10 bg-slate-950"
+      >
         <div
-          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10"
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 md:gap-10 contact-grid"
         >
           <div>
-            <h2 class="text-2xl sm:text-4xl font-bold">Kontak Kami</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
+              Kontak Kami
+            </h2>
             <p class="text-slate-300 mt-3">
               Ceritakan kebutuhan Anda. Kami akan balas secepatnya.
             </p>
@@ -375,7 +443,7 @@
             >
 
             <form
-              class="mt-8 space-y-4"
+              class="mt-6 md:mt-8 space-y-4"
               onsubmit="event.preventDefault(); window.open('https://wa.me/6285156000254?text=' + encodeURIComponent('Halo Rasoltek, saya tertarik dengan layanan Anda. Nama: ' + document.getElementById('fName').value + ', Email: ' + document.getElementById('fEmail').value + ', Telepon: ' + document.getElementById('fPhone').value + '. Pesan: ' + document.getElementById('fMsg').value),'_blank');"
             >
               <div class="grid sm:grid-cols-2 gap-4">
@@ -408,19 +476,19 @@
               <div class="flex flex-wrap gap-3">
                 <button
                   type="submit"
-                  class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-6 py-3 font-semibold shadow-lg shadow-brand-500/20 transition"
+                  class="inline-flex items-center rounded-full bg-brand-500 hover:bg-brand-600 px-5 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold shadow-lg shadow-brand-500/20 transition"
                 >
                   Kirim via WhatsApp
                 </button>
                 <a
                   href="mailto:halo@rasoltek.id"
-                  class="inline-flex items-center rounded-full ring-1 ring-white/20 hover:bg-white/5 px-6 py-3 font-semibold"
+                  class="inline-flex items-center rounded-full ring-1 ring-white/20 hover:bg-white/5 px-5 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold"
                   >Email Kami</a
                 >
               </div>
             </form>
 
-            <div class="mt-8 text-sm text-slate-400 space-y-1">
+            <div class="mt-6 md:mt-8 text-sm text-slate-400 space-y-1">
               <p><span class="text-white">Email:</span> halo@rasoltek.id</p>
               <p>
                 <span class="text-white">Telepon/WA:</span> +62 851-5600-0254
@@ -434,14 +502,14 @@
 
           <div
             id="map"
-            class="rounded-3xl overflow-hidden border border-white/10"
+            class="rounded-2xl md:rounded-3xl overflow-hidden border border-white/10"
           >
             <iframe
               title="Lokasi Rasoltek di Google Maps"
               src="https://www.google.com/maps?q=Rasoltek&output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              class="w-full h-[420px]"
+              class="w-full h-[300px] md:h-[420px]"
             ></iframe>
           </div>
         </div>
@@ -453,5 +521,29 @@
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
+    <script>
+      // Responsive navigation toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const btnMenu = document.getElementById("btnMenu");
+        const mobileNav = document.getElementById("mobileNav");
+
+        if (btnMenu && mobileNav) {
+          btnMenu.addEventListener("click", function () {
+            const isExpanded =
+              mobileNav.style.maxHeight !== "0px" &&
+              mobileNav.style.maxHeight !== "";
+            mobileNav.style.maxHeight = isExpanded
+              ? "0px"
+              : mobileNav.scrollHeight + "px";
+          });
+        }
+
+        // Set current year in footer
+        const yearElement = document.getElementById("year");
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
   </body>
 </html>

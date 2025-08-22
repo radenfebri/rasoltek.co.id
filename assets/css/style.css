@@ -1,0 +1,72 @@
+@keyframes float {
+  0%,100% { transform: translateY(0) }
+  50% { transform: translateY(-10px) }
+}
+.float-animation { animation: float 3s ease-in-out infinite }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+.fade-in-up { opacity: 0; animation: fadeInUp .8s ease-out forwards }
+
+/* Timeline garis tengah */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(to bottom, #0ea5e9, #1d4ed8);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Step bulat angka */
+.timeline-step {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(59,130,246,0.6);
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-step:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(59,130,246,0.9);
+}
+
+/* Card gambar & teks */
+.timeline-card {
+  background: rgba(30,41,59,0.6); /* semi-transparan dark */
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+}
+
+/* Tambah animasi reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
